@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <object th:include="templates/header :: head" th:remove="tag"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        <main role="main" class="col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-3">
+                        <h3>Product List</h3>
+                    </div>
+                    <div class="col-2">
+                        <a th:href="@{/product/create}" href="/product/create" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                            Add Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-hover" id="table-product-list">
+                <thead class="thead">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">SerialNo</th>
+                    <th scope="col">Catalog</th>
+                    <th scope="col">Description</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="product: ${products}">
+                    <td scope="row" th:text="${product.productId}"></td>
+                    <td>
+                        <a href="/product/detail.html" th:text="${product.name}" th:href="@{'/product/detail/' + ${product.productId}}"></a>
+                    </td>
+                    <td th:text="${product.serialNo}"></td>
+                    <td th:text="${product.catalog}"></td>
+                    <td th:text="${product.description}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</div>
+</body>
+</html>

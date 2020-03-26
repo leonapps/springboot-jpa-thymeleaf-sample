@@ -1,0 +1,52 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: initial;
+    background-color: #f2f3f8;
+    color: #646c9a;
+    margin: 25px 25px;
+}
+
+p {
+    color: #999;
+}
+
+a {
+    color: #5d78ff;
+    font-width: 500;
+}
+a:hover,
+a:focus {
+    color: #5d78ff;
+    text-decoration: solid;
+    transition: all 0.3s;
+}
+
+input, input.form-control {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+select, select.form-control {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+textarea, textarea.form-control {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.btn {
+    margin-right: 15px;
+}
+
+
+
+
+
+

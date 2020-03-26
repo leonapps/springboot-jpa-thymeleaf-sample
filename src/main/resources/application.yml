@@ -1,0 +1,33 @@
+logging:
+  level:
+    org:
+      springframework: INFO
+
+spring:
+  application:
+    name: spring mvc demo
+  messages:
+    basename: i18n/messages
+    encoding: UTF-8
+  thymeleaf:
+#    prefix: classpath:/templates/
+    prefix: /WEB-INF/pages/
+    suffix: .html
+    mode: HTML5
+    encoding: utf-8
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/sample
+    username: app_admin
+    password: app_admin
+
+

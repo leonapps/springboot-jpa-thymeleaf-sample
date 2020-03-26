@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <object th:include="templates/header :: head" th:remove="tag"/>
+</head>
+<body>
+<div class="container-fluid align-items-center">
+    <div class="row">
+        <h5 th:text="#{product.detail.title}"></h5>
+    </div>
+    <div class="row">
+        <object th:include="templates/message :: body" th:remove="tag"/>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-1 text-sm-right font-weight-light">Product Name:</div>
+                <p class="col-sm-11 text-sm-left font-weight-normal" th:text="${productForm.name}"></p>
+            </div>
+            <div class="row">
+                <div class="col-sm-1 text-sm-right font-weight-light">Serial No.:</div>
+                <p class="col-sm-2 text-sm-left font-weight-normal" th:text="${productForm.serialNo}"></p>
+                <div class="col-sm-1 text-sm-right font-weight-light" >Catalog:</div>
+                <p class="col-sm-2 text-sm-left font-weight-normal" th:text="${productForm.catalog}">></p>
+            </div>
+            <div class="row">
+                <label class="col-sm-1 text-sm-right font-weight-light">Description:</label>
+                <p class="col-sm-5 text-sm-left font-weight-normal" th:text="${productForm.description}"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <a class="btn btn-light" role="button" href="/">
+            < Back
+        </a>
+        <a class="btn btn-primary" role="button" th:href="@{'/product/edit/' + ${productForm.productId}}">
+            Edit
+        </a>
+        <a class="btn btn-primary" role="button" th:href="@{'/product/delete/' + ${productForm.productId}}" th:method="delete">
+            Delete
+        </a>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

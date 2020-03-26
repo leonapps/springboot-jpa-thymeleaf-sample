@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<div id="success-alert" th:if="${message_success}" th:class="${'alert alert-info alert-dismissible fade show container'}" role="alert">
+    <p th:text="${message_success}"></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <script>
+        $("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+            $("#success-alert").slideUp(500);
+        });
+    </script>
+</div>
+<div id="error-alert" th:if="${message_error}" th:class="${'alert alert-error alert-dismissible fade show container'}" role="alert">
+    <p th:text="${message_error}"></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <script>
+        $("#error-alert").fadeTo(2000, 500).slideUp(500, function() {
+            $("#error-alert").slideUp(500);
+        });
+    </script>
+</div>
+
+</body>
